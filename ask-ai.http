@@ -1,0 +1,12 @@
+### Test get-route endpoint
+POST http://localhost:3000/get-route
+Content-Type: application/json
+
+{
+  "start_address": "Praça da Sé, São Paulo, SP",
+  "end_address": "Praia de Copacabana, Rio de Janeiro, RJ",
+  "date_of_going": "2025-07-01",
+  "date_of_returning": "2025-07-10",
+  "max_route_desviation": "30"
+}
+
