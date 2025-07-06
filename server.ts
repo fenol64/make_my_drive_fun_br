@@ -39,6 +39,27 @@ app.post('/get-route', async (req: Request, res: Response): Promise<void> => {
 
 });
 
+app.get('/', (req: Request, res: Response): void => {
+    res.json({
+        message: 'Welcome to the AI Route Planner API',
+        routes: {
+            get_route: {
+                method: 'POST',
+                description: 'Get a route based on start and end addresses, dates, and max deviation',
+                url: '/get-route',
+                parameters: {
+                    start_address: 'Starting address for the route',
+                    end_address: 'Ending address for the route',
+                    date_of_going: 'Date of departure',
+                    date_of_returning: 'Date of return',
+                    max_route_desviation: 'Maximum allowed deviation from the route',
+                },
+            },
+        },
+
+    });
+});
+
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
